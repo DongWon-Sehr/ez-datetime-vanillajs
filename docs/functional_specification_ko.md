@@ -5,7 +5,7 @@
   - 기본적으로 현재 위치의 현재 시간을 가지고 있는 `ezDatetime` 객체를 반환합니다.
   - `targetDate`, `timezone` 파라미터를 전달하여 임의 시간을 가지고 있는 `ezDatetime` 객체를 반환합니다.
 
-- [ ] **기능 2: 타임존 설정**
+- [x] **기능 2: 타임존 설정**
   - `setTimezone(timezone)` 메서드를 사용하여 `ezDatetime` 객체의 타임존을 설정합니다.
   - `timezone` 매개변수에는 IANA 타임존 식별자 문자열을 전달합니다.
   - 설정된 타임존에 따라 `ezDatetime` 객체의 날짜와 시간이 표시됩니다.
