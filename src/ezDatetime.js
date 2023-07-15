@@ -67,6 +67,15 @@ class ezDatetime {
   
       return unitMap[unit.toLowerCase()] || NaN;
     }
+
+    getDifference(otherDatetime, unit = 'second') {
+      const unitValue = this.getUnitValue(unit);
+      if (isNaN(unitValue)) {
+        throw new Error(`Invalid unit "${unit}".`);
+      }
+      const diffInMilliseconds = Math.abs(this.date - otherDatetime.date);
+      return diffInMilliseconds / unitValue;
+    }
 }
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

@@ -22,7 +22,7 @@
   - 연산 문자열은 '+1 day', '-3 months', '+ 48 hours'와 같은 형식으로 표현됩니다.
   - 연산된 날짜로 `ezDatetime` 객체가 업데이트되며, 수정된 객체를 반환합니다.
 
-- [ ] **기능 5: 두 날짜의 차이 구하기**
+- [x] **기능 5: 두 날짜의 차이 구하기**
   - `getDifference(otherDatetime, unit = 'second')` 메서드를 사용하여 두 `ezDatetime` 객체 사이의 차이를 구합니다.
   - `otherDatetime` 매개변수에는 비교할 다른 `ezDatetime` 객체를 전달합니다.
   - `unit` 매개변수에는 반환할 차이의 단위를 선택적으로 전달합니다. 기본값은 'second'입니다.
