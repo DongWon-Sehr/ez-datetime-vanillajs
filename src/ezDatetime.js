@@ -18,6 +18,24 @@ class ezDatetime {
       this.date = new Date(this.date.toLocaleString('en-US', { timeZone: timezone }));
       this.timezone = timezone;
     }
+
+    format(formatString) {
+      const options = { timeZone: this.timezone, ...this.getFormatOptions(formatString) };
+      return this.date.toLocaleString(navigator.language, options);
+    }
+
+    getFormatOptions(formatString) {
+      const formatOptions = {};
+      const supportedFormatDirectives = ['year', 'month', 'day', 'hour', 'minute', 'second'];
+  
+      supportedFormatDirectives.forEach((directive) => {
+        if (formatString.includes(directive)) {
+          formatOptions[directive] = formatString.indexOf(directive);
+        }
+      });
+  
+      return formatOptions;
+    }
 }
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
