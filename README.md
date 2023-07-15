@@ -1,2 +1,2 @@
-# ezy-datetime-vanillajs
+# ez-datetime-vanillajs
 easy peasy datetime module (vanilla js)

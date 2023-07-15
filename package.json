@@ -1,5 +1,5 @@
 {
-  "name": "ezy-datetime-vanillajs",
+  "name": "ez-datetime-vanillajs",
   "version": "1.0.0",
   "description": "easy peasy datetime module (vanilla js)",
   "main": "src/index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DongWon-Sehr/ezy-datetime-vanillajs.git"
+    "url": "git+https://github.com/DongWon-Sehr/ez-datetime-vanillajs.git"
   },
   "keywords": [
     "datetime",
@@ -20,7 +20,7 @@
   "author": "DongWon-Sehr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DongWon-Sehr/ezy-datetime-vanillajs/issues"
+    "url": "https://github.com/DongWon-Sehr/ez-datetime-vanillajs/issues"
   },
-  "homepage": "https://github.com/DongWon-Sehr/ezy-datetime-vanillajs#readme"
+  "homepage": "https://github.com/DongWon-Sehr/ez-datetime-vanillajs#readme"
 }
