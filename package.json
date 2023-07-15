@@ -2,7 +2,8 @@
   "name": "ezy-datetime-vanillajs",
   "version": "1.0.0",
   "description": "easy peasy datetime module (vanilla js)",
-  "main": "index.js",
+  "main": "src/index.js",
+  "files": ["src"],
   "scripts": {
     "test": "echo \"No tests found.\""
   },
