@@ -76,6 +76,14 @@ class ezDatetime {
       const diffInMilliseconds = Math.abs(this.date - otherDatetime.date);
       return diffInMilliseconds / unitValue;
     }
+
+    toString() {
+      return this.date.toString();
+    }
+
+    toISOString() {
+      return this.date.toISOString();
+    }
 }
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
