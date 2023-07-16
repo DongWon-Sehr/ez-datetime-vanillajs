@@ -1,4 +1,6 @@
 import { timezones } from './static/timezones.js';
+import { ezDate } from './ezDate.js';
+
 class ezDatetime {
     /**
      * @param {String|null} targetDate - Target date to create (default: null)
@@ -21,30 +23,17 @@ class ezDatetime {
         if (targetDate && timezone) {
             this._setDate(targetDate, timezone);
         } else if (targetDate) {
-            this.date = new Date(targetDate);
+            this.date = new ezDate(targetDate);
             this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         } else if (timezone) {
-            const dateString = new Date().toLocaleString('en-US', { timeZone: timezone });
-            this.date = new Date(dateString);
+            const dateString = new ezDate().toLocaleString('en-US', { timeZone: timezone });
+            this.date = new ezDate(dateString);
             this.timezone = timezone;
         } else {
-            this.date = new Date();
+            this.date = new ezDate();
             this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         
         }
-
-        this.prototype.date.toString = function () {
-            const originString = this.date.toString();
-            const match = originString.match(/(.*\d{2}:\d{2}:\d{2})\w{1}(.*)$/);
-            
-            if (!match) {
-                return originString
-            }
-    
-            const [dateString, ] = match;
-            const newString = `${dateString} UTC${this.timezones[this.timezone]} (${this.timeznoe})`;
-            return newString;
-        };
     }
 
     /**
@@ -53,7 +42,7 @@ class ezDatetime {
      * @returns {ezDatetime}
      */
     setTimezone(timezone) {
-        this.date = new Date(this.date.toLocaleString('en-US', { timeZone: timezone }));
+        this.date = new ezDate(this.date.toLocaleString('en-US', { timeZone: timezone }), timezone);
         this.timezone = timezone;
         return this;
     }
@@ -188,7 +177,7 @@ class ezDatetime {
      * @returns {String}
      */
     toString() {
-        return this.date.toString();
+        return this.date.toString(this.timezone);
     }
 
     /**
@@ -215,7 +204,7 @@ class ezDatetime {
     _setDate(targetDate, timezone) {
         let tmpDate;
         if (typeof targetDate === 'number' ) {
-            tmpDate = new Date(targetDate);
+            tmpDate = new ezDate(targetDate);
         } else {
             const [datePart, timePart] = targetDate.split(' ');
     
@@ -239,10 +228,10 @@ class ezDatetime {
             const offsetInMinute = this._getUTCOffset(timezone);
             minute += offsetInMinute;
 
-            tmpDate = new Date(Date.UTC(year, month, day, hour, minute, second));
+            tmpDate = new ezDate(ezDate.UTC(year, month, day, hour, minute, second));
         }
 
-        this.date = new Date(tmpDate);
+        this.date = new ezDate(tmpDate);
         this.timezone = timezone;
     }
 

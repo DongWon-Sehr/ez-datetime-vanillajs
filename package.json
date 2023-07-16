@@ -1,6 +1,6 @@
 {
   "name": "@smarttuna/ez-datetime-vanillajs",
-  "version": "1.2.7",
+  "version": "2.0.0",
   "description": "Easy peasy datetime module (Vanilla JS)",
   "main": "src/index.js",
   "files": [
