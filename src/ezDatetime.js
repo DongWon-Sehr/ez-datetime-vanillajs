@@ -1,5 +1,4 @@
 class ezDatetime {
-
     /**
      * @param {String|null} targetDate - Target date to create (default: null)
      * @param {String|null} timezone - IANA Time Zone Identifier (default: null)
@@ -21,7 +20,7 @@ class ezDatetime {
 
     /**
      * Change timezone.
-     * @param {String} timezone IANA Time Zone Identifier
+     * @param {String} timezone - IANA Time Zone Identifier
      * @returns {ezDatetime}
      */
     setTimezone(timezone) {
@@ -31,9 +30,9 @@ class ezDatetime {
     }
 
     /**
-     * Get String type date with given format.
-     * @param {String} formatString - format string to get. (ex. 'yyyy-mm-dd HH:mm:ss.SSS')
-     * - Year: 'yyyy' or 'yy' 
+     * Get String type date with the given format.
+     * @param {String} formatString - Format string to get. (ex. 'yyyy-mm-dd HH:mm:ss.SSS')
+     * - Year: 'yyyy' or 'yy'
      * - Month: 'MM'
      * - Date: 'dd'
      * - Hours: 'HH'
@@ -43,7 +42,6 @@ class ezDatetime {
      * @returns {String}
      */
     format(formatString) {
-
         let formattedString = formatString;
 
         if (formatString.includes('yyyy')) {
@@ -60,14 +58,14 @@ class ezDatetime {
             .replace(/HH/g, this.date.getHours().toString().padStart(2, '0'))
             .replace(/mm/g, this.date.getMinutes().toString().padStart(2, '0'))
             .replace(/ss/g, this.date.getSeconds().toString().padStart(2, '0'))
-            .replace(/SSS/g, this.date.getMilliseconds().toString().padStart(3, '0'))
+            .replace(/SSS/g, this.date.getMilliseconds().toString().padStart(3, '0'));
 
         return formattedString;
     }
 
     /**
-     * Add or substract dates.
-     * @param {String} operation - expression to add or substract (ex. '+2 days')
+     * Add or subtract dates.
+     * @param {String} operation - Expression to add or subtract (ex. '+2 days')
      * @returns {ezDatetime}
      */
     calculate(operation) {
@@ -82,14 +80,14 @@ class ezDatetime {
         }
         const timeInMilliseconds = parseInt(value) * unitValue;
         const newDate = new Date(this.date.getTime() + timeInMilliseconds);
-        this.date = new Date(newDate.toLocaleString('en-US', { timeZone: this.timezone }));
+        this.date = newDate.toLocaleString('en-US', { timeZone: this.timezone });
         return this;
     }
 
     /**
-     * Get difference with given ezDatetime.
-     * @param {ezDatetime} otherDatetime 
-     * @param {String} unit - year, month, week, day, hour, minute, second, millisecond (default: 'second')
+     * Get the difference with the given ezDatetime.
+     * @param {ezDatetime} otherDatetime - Another ezDatetime object to compare with
+     * @param {String} unit - Unit of difference: year, month, week, day, hour, minute, second, millisecond (default: 'second')
      * @returns {number}
      */
     getDifference(otherDatetime, unit = 'second') {
@@ -102,7 +100,7 @@ class ezDatetime {
     }
 
     /**
-     * Get the 4-digit year part of a date, using local time.
+     * Get the year part of a date, using local time.
      * @returns {number}
      */
     getYear() {
@@ -182,8 +180,8 @@ class ezDatetime {
     }
 
     /**
-     * Get unit value in milliseconds
-     * @param {String} unit - year, month, week, day, hour, minute, second, millisecond
+     * Get unit value in milliseconds.
+     * @param {String} unit - Unit of time: year, month, week, day, hour, minute, second, millisecond
      * @returns {number}
      */
     _getUnitValue(unit) {
