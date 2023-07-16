@@ -5,6 +5,8 @@ class ezDatetime {
      * @param {String|null} timezone - IANA Time Zone Identifier (default: null)
      */
     constructor(targetDate = null, timezone = null) {
+        this.timezones = timezones;
+
         if (targetDate && !this._isValidDate(targetDate)) {
             throw new Error('Invalid targetDate. Please provide a valid date string.');
         }
@@ -263,7 +265,7 @@ class ezDatetime {
      * @returns {boolean}
      */
     _isValidTimezone(timezone) {
-        return Object.keys(timezones).includes(timezone);
+        return Object.keys(this.timezones).map(toLowerCase).includes(timezone.toLowerCase());
     }
 
     /**
@@ -276,7 +278,7 @@ class ezDatetime {
             throw new Error('Invalid timezone. Please provide a valid IANA Time Zone Identifier.');
         }
 
-        const offsetString = timezones.timezone;
+        const offsetString = this.timezones.timezone;
         const [hourPart, minute] =  offsetString.split(':');
         const sign = hourPart.substring(0, 1);
         const hour = hourPart.substring(1);
