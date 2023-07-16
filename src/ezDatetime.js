@@ -88,8 +88,7 @@ class ezDatetime {
             throw new Error(`Invalid unit "${unit}".`);
         }
         const timeInMilliseconds = parseInt(value) * unitValue;
-        const newDate = new Date(this.date.getTime() + timeInMilliseconds);
-        this.date = newDate.toLocaleString('en-US', { timeZone: this.timezone });
+        this.date = this._setDate(this.date.getTime() + timeInMilliseconds);
         return this;
     }
 
@@ -190,26 +189,41 @@ class ezDatetime {
 
     /**
      * Set date with given targetDate and timezone
-     * @param {String} targetDate - Target date to create
+     * @param {String|number} targetDate - Target date to create
      * @param {String} timezone - IANA Time Zone Identifier
      */
     _setDate(targetDate, timezone) {
-        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: timezone };
-        const [datePart, timePart] = targetDate.split(' ');
+        let tmpDate;
+        if (typeof targetDate === 'number' ) {
+            tmpDate = new Date(targetDate);
+        } else {
+            const [datePart, timePart] = targetDate.split(' ');
+    
+            let [year, month, day] = [0, 0, 0];
+            if (datePart) {
+                [year, month, day] = datePart.split(/-|:|\//).map(Number);
+            }
+    
+            let [hour, minute, second] = [0, 0, 0];
+            if (timePart) {
+                [hour, minute, second] = timePart.split(':').map(Number);
+            }
+    
+            year = parseInt(year);
+            month = parseInt(month);
+            day = parseInt(day);
+            hour = parseInt(hour);
+            minute = parseInt(minute);
+            second = parseInt(second);
+            
+            const offsetInMinute = this._getUTCOffset(timezone);
+            minute += offsetInMinute;
 
-        let [year, month, day] = [0, 0, 0];
-        if (datePart) {
-            [year, month, day] = datePart.split(/-|:|\//).map(Number);
+            tmpDate = new Date(Date.UTC(year, month, day, hour, minute, second));
         }
 
-        let [hour, minute, second] = [0, 0, 0];
-        if (timePart) {
-            [hour, minute, second] = timePart.split(':').map(Number);
-        }
-
-        const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}:${second.toString().padStart(2, '0')}`;
-        this.date = new Date(formattedDate);
-        this.timezone = Intl.DateTimeFormat(undefined, { timeZone: timezone }).resolvedOptions().timeZone;
+        this.date = new Date(tmpDate);
+        this.timezone = timezone;
     }
 
     /**
@@ -249,7 +263,28 @@ class ezDatetime {
      * @returns {boolean}
      */
     _isValidTimezone(timezone) {
-        return timezones.includes(timezone);
+        return Object.keys(timezones).includes(timezone);
+    }
+
+    /**
+     * Get offset time in minutes compare to UTC timezone
+     * @param {String} timezone - Input timezone string
+     * @returns {number}
+     */
+    _getUTCOffset(timezone) {
+        if (!this._isValidTimezone(timezone)) {
+            throw new Error('Invalid timezone. Please provide a valid IANA Time Zone Identifier.');
+        }
+
+        const offsetString = timezones.timezone;
+        const [hourPart, minute] =  offsetString.split(':');
+        const sign = hourPart.substring(0, 1);
+        const hour = hourPart.substring(1);
+
+        let offsetInMinute = parseInt(hour) * 60 + parseInt(minute);
+        if (sign == "-") offsetInMinute = offsetInMinute * (-1);
+
+        return offsetInMinute;
     }
 }
 
