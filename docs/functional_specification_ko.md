@@ -29,6 +29,16 @@
   - 지원되는 단위로는 'second' (초), 'minute' (분), 'hour' (시간), 'day' (일) 등이 있습니다.
   - 실수형으로 변환된 차이를 반환합니다.
 
-- [x] **기능 6: 문자열**
-  - `toString()` 메서드를 사용하여 Date 를 String 형식으로 반환합니다..
+- [x] **기능 6: 문자열 반환**
+  - `toString()` 메서드를 사용하여 Date 를 String 형식으로 반환합니다.
   - `toISOString()` 메서드를 사용하여 Date 를 ISO 형식 String 으로 반환합니다.
+  - `toUTCString()` 메서드를 사용하여 Date 를 UTC 기준 String 으로 반환합니다.
+
+- [x] **기능 7: 날짜 파싱 데이터 반환**
+  - `getYear()` 메서드를 사용하여 Date 의 연도를 "YYYY" 형식으로 반환합니다.
+  - `getMonth()` 메서드를 사용하여 Date 의 월을 "mm" 형식으로 반환합니다.
+  - `getDate()` 메서드를 사용하여 Date 의 일자를 "dd" 형식으로 반환합니다.
+  - `getHours()` 메서드를 사용하여 Date 의 시간을 "hh" 형식으로 반환합니다.
+  - `getMinutes()` 메서드를 사용하여 Date 의 분을 "ii" 형식으로 반환합니다.
+  - `getSeconds()` 메서드를 사용하여 Date 의 초를 "ss" 형식으로 반환합니다.
+  - `getMilliseconds()` 메서드를 사용하여 Date 의 밀리리초를 "SSS" 형식으로 반환합니다.
