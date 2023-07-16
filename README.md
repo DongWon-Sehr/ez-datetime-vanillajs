@@ -1,5 +1,5 @@
 # ez-datetime-vanillajs
-Easy peasy datetime module (vanilla js)
+Easy peasy datetime module (Vanilla JS)
 
 `ez-datetime-vanillajs` is a lightweight JavaScript library for working with dates and timezones. It provides an easy-to-use interface for creating, manipulating, and formatting dates. It supports various date formats and allows you to perform calculations and get the difference between dates.
 
