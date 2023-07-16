@@ -198,8 +198,8 @@ class ezDatetime {
             year: 365 * 24 * 60 * 60 * 1000,
         };
 
-        const unit = unit.toLowerCase().replace(/s$/, '');
-        return unitMap[unit] || NaN;
+        const unitKey = unit.toLowerCase().replace(/s$/, '');
+        return unitMap[unitKey] || NaN;
     }
 }
 
