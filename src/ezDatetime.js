@@ -14,8 +14,6 @@ class ezDatetime {
 
         if (targetDate && timezone) {
             this._setDate(targetDate, timezone);
-            this.date = new Date(targetDate)
-            this.timezone = timezone;
         } else if (targetDate) {
             this.date = new Date(targetDate);
             this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
