@@ -88,7 +88,7 @@ class ezDatetime {
             throw new Error(`Invalid unit "${unit}".`);
         }
         const timeInMilliseconds = parseInt(value) * unitValue;
-        this.date = this._setDate(this.date.getTime() + timeInMilliseconds);
+        this._setDate(this.date.getTime() + timeInMilliseconds, this.timezone);
         return this;
     }
 
