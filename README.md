@@ -73,10 +73,14 @@ const formattedDate = datetime.format('yyyy-mm-dd HH:mm:ss.SSS');
 
 // Add or subtract dates
 datetime.calculate('+2 days');
+datetime.calculate('-3 months');
+datetime.calculate('+48 hours');
 
 // Get the difference between two dates
 const otherDatetime = new ezDatetime();
-const difference = datetime.getDifference(otherDatetime, 'hour');
+const differenceInSecond = datetime.getDifference(otherDatetime);
+const differenceInHour = datetime.getDifference(otherDatetime, 'hour');
+const differenceInWeek = datetime.getDifference(otherDatetime, 'week');
 
 // Get the year
 const year = datetime.getYear();
