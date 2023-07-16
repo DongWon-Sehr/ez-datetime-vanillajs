@@ -288,8 +288,4 @@ class ezDatetime {
     }
 }
 
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = ezDatetime;
-} else {
-    window.ezDatetime = ezDatetime;
-}
+export default ezDatetime;

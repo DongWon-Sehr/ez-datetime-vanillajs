@@ -1,3 +1,7 @@
-import ezDatetime from './ezDatetime';
+import ezDatetime from './ezDatetime.js';
 
-export default ezDatetime;
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = ezDatetime;
+} else {
+    window.ezDatetime = ezDatetime;
+}
