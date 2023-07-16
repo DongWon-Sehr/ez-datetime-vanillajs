@@ -5,23 +5,23 @@ class ezDatetime {
      * @param {String|null} timezone - IANA Time Zone Identifier (default: null)
      */
     constructor(targetDate = null, timezone = null) {
-        if (targetDate && ! this._isValidDate(targetDate)) {
+        if (targetDate && !this._isValidDate(targetDate)) {
             throw new Error('Invalid targetDate. Please provide a valid date string.');
-        } 
-        if (timezone && ! this._isValidTimezone(timezone)) {
+        }
+        if (timezone && !this._isValidTimezone(timezone)) {
             throw new Error('Invalid timezone. Please provide a valid IANA Time Zone Identifier.');
-        } 
-
+        }
 
         if (targetDate && timezone) {
-            this.setDate(targetDate, timezone);
+            this._setDate(targetDate, timezone);
             this.date = new Date(targetDate)
             this.timezone = timezone;
         } else if (targetDate) {
             this.date = new Date(targetDate);
             this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         } else if (timezone) {
-            this.date = new Date(this.date.toLocaleString('en-US', { timeZone: timezone }));
+            const dateString = new Date().toLocaleString('en-US', { timeZone: timezone });
+            this.date = new Date(dateString);
             this.timezone = timezone;
         } else {
             this.date = new Date();
@@ -193,7 +193,7 @@ class ezDatetime {
     /**
      * Set date with given targetDate and timezone
      * @param {String} targetDate - Target date to create
-     * @param {String} timezone  - IANA Time Zone Identifier
+     * @param {String} timezone - IANA Time Zone Identifier
      */
     _setDate(targetDate, timezone) {
         const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: timezone };
@@ -236,10 +236,10 @@ class ezDatetime {
     }
 
     /**
-   * Check if the input is a valid date string.
-   * @param {String} date - Input date string
-   * @returns {boolean}
-   */
+     * Check if the input is a valid date string.
+     * @param {String} date - Input date string
+     * @returns {boolean}
+     */
     _isValidDate(date) {
         const timestamp = Date.parse(date);
         return !isNaN(timestamp);
