@@ -14,6 +14,8 @@ class ezDatetime {
             throw new Error('Invalid timezone. Please provide a valid IANA Time Zone Identifier.');
         }
 
+        timezone = this._patchTimezone(timezone);
+
         if (targetDate && timezone) {
             this._setDate(targetDate, timezone);
         } else if (targetDate) {
@@ -278,7 +280,7 @@ class ezDatetime {
             throw new Error('Invalid timezone. Please provide a valid IANA Time Zone Identifier.');
         }
 
-        const offsetString = this.timezones.timezone;
+        const offsetString = this.timezones[timezone];
         const [hourPart, minute] =  offsetString.split(':');
         const sign = hourPart.substring(0, 1);
         const hour = hourPart.substring(1);
@@ -287,6 +289,25 @@ class ezDatetime {
         if (sign == "-") offsetInMinute = offsetInMinute * (-1);
 
         return offsetInMinute;
+    }
+
+    /**
+     * Patch string case of timezone
+     * @param {String} timezone - Input timezone string
+     * @returns {String}
+     */
+    _patchTimezone(timezone) {
+        const keys = Object.keys(this.timezones);
+        const index =  Object.keys(this.timezones).map(key => key.toLowerCase()).indexOf(timezone.toLowerCase());
+
+        let newTimezone;
+        if (index === -1) {
+            newTimezone = undefined;
+        } else {
+            newTimezone = keys[index];
+        }
+
+        return newTimezone;
     }
 }
 
