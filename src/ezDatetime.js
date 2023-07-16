@@ -14,7 +14,9 @@ class ezDatetime {
             throw new Error('Invalid timezone. Please provide a valid IANA Time Zone Identifier.');
         }
 
-        timezone = this._patchTimezone(timezone);
+        if (timezone) {
+            timezone = this._patchTimezone(timezone);
+        }
 
         if (targetDate && timezone) {
             this._setDate(targetDate, timezone);
@@ -28,7 +30,21 @@ class ezDatetime {
         } else {
             this.date = new Date();
             this.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        
         }
+
+        this.prototype.date.toString = function () {
+            const originString = this.date.toString();
+            const match = originString.match(/(.*\d{2}:\d{2}:\d{2})\w{1}(.*)$/);
+            
+            if (!match) {
+                return originString
+            }
+    
+            const [dateString, ] = match;
+            const newString = `${dateString} UTC${this.timezones[this.timezone]} (${this.timeznoe})`;
+            return newString;
+        };
     }
 
     /**

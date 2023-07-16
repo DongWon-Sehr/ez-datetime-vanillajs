@@ -27,7 +27,6 @@ To use `ez-datetime-vanillajs`, you need to create an instance of the ezDatetime
 Here's an example of creating an ezDatetime object:
 
 ```javascript
-import { timezones } from './static/timezones.js';
 import ezDatetime from '@smarttuna/ez-datetime-vanillajs';
 
 const targetDate = '2023-07-16 15:30:00';
