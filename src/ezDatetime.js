@@ -265,7 +265,7 @@ class ezDatetime {
      * @returns {boolean}
      */
     _isValidTimezone(timezone) {
-        return Object.keys(this.timezones).map(toLowerCase).includes(timezone.toLowerCase());
+        return Object.keys(this.timezones).map(key => key.toLowerCase()).includes(timezone.toLowerCase());
     }
 
     /**
