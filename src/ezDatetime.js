@@ -1,4 +1,4 @@
-import { timezones } from './src/static/timezones.js';
+import { timezones } from './static/timezones.js';
 class ezDatetime {
     /**
      * @param {String|null} targetDate - Target date to create (default: null)

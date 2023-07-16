@@ -1,3 +1,3 @@
-import ezDatetime from './src/ezDatetime';
+import ezDatetime from './ezDatetime';
 
 export default ezDatetime;
