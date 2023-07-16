@@ -1,11 +1,20 @@
 {
   "name": "ez-datetime-vanillajs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "easy peasy datetime module (vanilla js)",
   "main": "src/index.js",
-  "files": ["src"],
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"No tests found.\""
+    "test": "echo \"No tests found.\"",
+    "build": "webpack --mode production",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
   },
   "repository": {
     "type": "git",
