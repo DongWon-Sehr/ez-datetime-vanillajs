@@ -1,11 +1,19 @@
-# ez-datetime-vanillajs
+# @smarttuna/ez-datetime-vanillajs
 Easy peasy datetime module (Vanilla JS)
 
-`ez-datetime-vanillajs` is a lightweight JavaScript library for working with dates and timezones. It provides an easy-to-use interface for creating, manipulating, and formatting dates. It supports various date formats and allows you to perform calculations and get the difference between dates.
+![Downloads](https://img.shields.io/npm/dw/@smarttuna/ez-datetime-vanillajs.svg)
+![Downloads](https://img.shields.io/npm/dm/@smarttuna/ez-datetime-vanillajs.svg)
+![Downloads](https://img.shields.io/npm/dt/@smarttuna/ez-datetime-vanillajs.svg)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E.svg?logo=javascript&logoColor=white)
+![Vanilla JS](https://img.shields.io/badge/-Vanilla_JS-4EBA32.svg)
+![npm version](https://img.shields.io/npm/v/@smarttuna/ez-datetime-vanillajs.svg)
+![License](https://img.shields.io/npm/l/@smarttuna/ez-datetime-vanillajs.svg)
+
+`@smarttuna/ez-datetime-vanillajs` is a lightweight JavaScript library for working with dates and timezones. It provides an easy-to-use interface for creating, manipulating, and formatting dates. It supports various date formats and allows you to perform calculations and get the difference between dates.
 
 ## Installation
 
-You can install `ez-datetime-vanillajs` using npm or by including the library directly in your HTML file.
+You can install `@smarttuna/ez-datetime-vanillajs` using npm or by including the library directly in your HTML file.
 
 ### npm
 
@@ -22,11 +30,12 @@ Add the following script tag to your HTML file:
 ```
 
 ## Usage
-To use `ez-datetime-vanillajs`, you need to create an instance of the ezDatetime class. You can optionally provide a target date and timezone when creating the instance. If no target date or timezone is provided, the current date and the local timezone will be used.
+To use `@smarttuna/ez-datetime-vanillajs`, you need to create an instance of the ezDatetime class. You can optionally provide a target date and timezone when creating the instance. If no target date or timezone is provided, the current date and the local timezone will be used.
+
 
 Here's an example of creating an ezDatetime object:
-
 ```javascript
+// You don't need this import statement if you load the package using an HTML script tag
 import ezDatetime from '@smarttuna/ez-datetime-vanillajs';
 
 const targetDate = '2023-07-16 15:30:00';
@@ -111,3 +120,27 @@ const isoString = datetime.toISOString();
 // Convert to UTC string
 const utcString = datetime.toUTCString();
 ```
+
+## License
+
+MIT License
+
+Copyright (c) 2023 DongWon Sehr
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

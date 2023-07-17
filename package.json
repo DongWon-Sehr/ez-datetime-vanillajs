@@ -1,6 +1,6 @@
 {
   "name": "@smarttuna/ez-datetime-vanillajs",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Easy peasy datetime module (Vanilla JS)",
   "main": "src/index.js",
   "files": [
@@ -21,8 +21,12 @@
     "url": "git+https://github.com/DongWon-Sehr/ez-datetime-vanillajs.git"
   },
   "keywords": [
+    "date",
     "datetime",
     "timezone",
+    "setTimezone",
+    "localTime",
+    "Date.js",
     "vanillajs"
   ],
   "author": {
