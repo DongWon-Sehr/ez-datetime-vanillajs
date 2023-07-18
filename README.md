@@ -11,9 +11,8 @@ Easy peasy datetime module (Vanilla JS)
 
 `@smarttuna/ez-datetime-vanillajs` is a lightweight JavaScript library for working with dates and timezones. It provides an easy-to-use interface for creating, manipulating, and formatting dates. It supports various date formats and allows you to perform calculations and get the difference between dates.
 
-> Github: [https://github.com/DongWon-Sehr/ez-datetime-vanillajs](https://github.com/DongWon-Sehr/ez-datetime-vanillajs)
->
-> NPM: [https://www.npmjs.com/package/@smarttuna/ez-datetime-vanillajs](https://www.npmjs.com/package/@smarttuna/ez-datetime-vanillajs)
+> - Github: [https://github.com/DongWon-Sehr/ez-datetime-vanillajs](https://github.com/DongWon-Sehr/ez-datetime-vanillajs)
+> - NPM: [https://www.npmjs.com/package/@smarttuna/ez-datetime-vanillajs](https://www.npmjs.com/package/@smarttuna/ez-datetime-vanillajs)
 
 ## Installation
 
