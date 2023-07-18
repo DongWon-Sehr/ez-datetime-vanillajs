@@ -5,6 +5,7 @@ Easy peasy datetime module (Vanilla JS)
 ![Downloads](https://img.shields.io/npm/dm/@smarttuna/ez-datetime-vanillajs.svg)
 ![Downloads](https://img.shields.io/npm/dt/@smarttuna/ez-datetime-vanillajs.svg)
 [![GitHub bug issues](https://img.shields.io/github/issues/DongWon-Sehr/ez-datetime-vanillajs/bug?label=bug%20reports)](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+<br>
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E.svg?logo=javascript&logoColor=white)
 ![Vanilla JS](https://img.shields.io/badge/-Vanilla_JS-4EBA32.svg)
 ![npm version](https://img.shields.io/npm/v/@smarttuna/ez-datetime-vanillajs.svg)
