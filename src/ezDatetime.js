@@ -112,7 +112,13 @@ class ezDatetime {
         if (isNaN(unitValue)) {
             throw new Error(`Invalid unit "${unit}".`);
         }
-        const diffInMilliseconds = Math.abs(this.date - otherDatetime.date);
+
+        const copiedDatetime = this.date;
+        const copiedOtherDatetime = otherDatetime;
+        copiedDatetime.setTimezone("UTC");
+        copiedOtherDatetime.setTimezone("UTC");
+
+        const diffInMilliseconds = Math.abs(copiedDatetime.date - copiedOtherDatetime.date);
         return diffInMilliseconds / unitValue;
     }
 
