@@ -124,5 +124,8 @@ const isoString = datetime.toISOString();
 const utcString = datetime.toUTCString();
 ```
 
+## Release Notes
+See [CHANGELOG.md](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/blob/main/CHANGELOG.md)
+
 ## License
-[MIT Liccnse.md](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/blob/main/LICENSE)
+See [License.md](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/blob/main/LICENSE.md)
