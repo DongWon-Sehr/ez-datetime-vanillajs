@@ -128,4 +128,4 @@ const utcString = datetime.toUTCString();
 See [CHANGELOG.md](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/blob/main/CHANGELOG.md)
 
 ## License
-See [License.md](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/blob/main/LICENSE.md)
+See [LICENSE.md](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/blob/main/LICENSE.md)
