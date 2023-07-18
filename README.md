@@ -124,6 +124,12 @@ const isoString = datetime.toISOString();
 const utcString = datetime.toUTCString();
 ```
 
+## Support
+
+- 👉 [Submit a bug report](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/issues/new?assignees=&labels=bug&template=bug_report.md&title=)
+- 👉 [Submit a feature request](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
+- 👉 [Submit any feedback](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/issues/new/choose)
+
 ## Release Notes
 See [CHANGELOG.md](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/blob/main/CHANGELOG.md)
 
