@@ -82,7 +82,7 @@ const datetime = new ezDatetime();
 // Change the timezone
 datetime.setTimezone('America/New_York');
 
-// Format the date
+// Get the formatted date
 const formattedDate = datetime.format('yyyy-mm-dd HH:mm:ss.SSS');
 
 // Add or subtract dates
