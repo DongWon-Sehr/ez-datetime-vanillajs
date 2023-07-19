@@ -48,6 +48,7 @@ const timezone = 'America/New_York';
 
 const datetime = new ezDatetime(targetDate, timezone);
 ```
+`timezone` parameter should be a string of the [IANA Timezone Identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) format, and the list of identifiers and UTC offset data is embedded within the ezDatetime class. You can access the object using [`ezDatetime.timezones`](https://github.com/DongWon-Sehr/ez-datetime-vanillajs/blob/main/src/static/timezones.js).
 
 ### Object Creation Examples
 1. Create an ezDatetime object with the current date and local timezone:
