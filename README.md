@@ -99,7 +99,7 @@ const differenceInWeek = datetime.getDifference(otherDatetime, 'week');
 // Get the year
 const year = datetime.getYear();
 
-// Get the month
+// Get the month (Response is in the range of 1 ~ 12)
 const month = datetime.getMonth();
 
 // Get the date
