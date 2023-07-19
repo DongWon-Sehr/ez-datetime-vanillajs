@@ -132,7 +132,7 @@ class ezDatetime {
 
     /**
      * Get the month part of a date, using local time.
-     * @returns {number} (1~12)
+     * @returns {number} (one-based response. range of 1~12)
      */
     getMonth() {
         return this.date.getMonth() + 1;
