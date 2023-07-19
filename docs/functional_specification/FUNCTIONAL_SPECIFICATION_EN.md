@@ -1,4 +1,4 @@
-## ezDatetime Feature Specification
+## ezDatetime Functional Specification
 
 - [x] **Feature 1: Create ezDatetime Objects**
   - Use the `ezDatetime` class to create `ezDatetime` objects.
